@@ -1,0 +1,19 @@
+{
+  "name": "Python 3.9 & Jupyter",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+
+  "forwardPorts": [8888, 8000],
+  "mounts": ["source=${localWorkspaceFolder},target=/app,type=bind"],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

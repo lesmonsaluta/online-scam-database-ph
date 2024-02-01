@@ -1,0 +1,16 @@
+pytesseract
+pillow
+opencv-python
+asyncpg
+numpy
+fastapi
+uvicorn
+ipykernel
+python-multipart
+tortoise-orm
+aerich
+pydantic
+databases[postgresql]
+python-dotenv
+aerich
+aiopg
