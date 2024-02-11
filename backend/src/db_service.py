@@ -9,7 +9,6 @@ async def init_query(top: int):
         # Using Tortoise ORM's query builder
         result = await text_messages.all().limit(top)
         
-        # Convert the result to a list of dicts (or another preferred format)
         data = [dict(message) for message in result]
 
         return data, None
@@ -19,3 +18,10 @@ async def init_query(top: int):
         return None, "No values in table"
     except Exception as e:
         return None, str(e)
+    
+
+async def write_to_db(extracted_numbers, text, bin_contents, hex_digest):
+    try:
+        await text_messages.create(sim_number=extracted_numbers, detected_text=text, image_file=bin_contents, blob_hash=hex_digest)
+    except Exception as e:
+        return str(e)

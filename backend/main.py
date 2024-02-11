@@ -2,16 +2,15 @@ from fastapi import File, UploadFile
 from src.app_factory import create_app
 
 from src.ocr_service import process_image
-from src.db_models import text_messages
-from src.db_service import init_query
+from src.db_service import init_query, write_to_db
 
 from src.logger_setup import logger_service
 
 import asyncio
-import hashlib
 
 """
-Uses src/app_factory.py for instantiation of the app, as well as connection to the DB via register_tortoise. 
+Uses src/app_factory.py for instantiation of the app, as well as connection to the DB via register_tortoise
+Uses src/logger_setup/logger_service to instantiate a logger
 """
 app = create_app()
 logger = logger_service.logger_init()
@@ -28,42 +27,37 @@ logger = logger_service.logger_init()
 #! For internal communication between services, (data, error) is okay
 #! Need to plan out for frontend
 
+# Endpoint triggered upon image uploads
 @app.post("/upload-images/")
 async def create_upload_file(files: list[UploadFile] = File(...)):
     results = {}
+    
     for file in files:
-        try:
-            logger.info(f"Received {file.filename} for OCR processing")
+        logger.info(f"Received {file.filename} for OCR processing")
+        
+        # Process the image
+        (extracted_numbers, text, bin_contents, hex_digest), file_error = await asyncio.to_thread(process_image, file)
+        if file_error:
+            logger.error(f"{file_error} for {file.filename}")
+            results[f'{file.filename}'] = {'data' : None,
+                                           'error' : file_error}
+            continue
+        logger.info(f"Number and text extracted for {file.filename}")
 
-            extracted_numbers, text = await asyncio.to_thread(process_image, file)
+        # Write to DB Service
+        db_error = await write_to_db(extracted_numbers, text, bin_contents, hex_digest)
+        if db_error:
+            logger.error(f"Error for {file.filename}: {db_error}")
+            results[f'{file.filename}'] = {'data' : None,
+                                           'error' : str(db_error)}
+            continue
+    
 
-            contents = await file.read()
-            bin_contents = contents
-
-            hash_object = hashlib.sha256(bin_contents)
-            hex_digest = hash_object.hexdigest()
-            logger.info(f"Number and text extracted")
-
-            # Write to DB
-            await text_messages.create(sim_number=extracted_numbers, detected_text=text, image_file=bin_contents, blob_hash=hex_digest)
-            # schema, from text_messages_service import write_to_db
-            # write_to_db ganito ganyan
-            logger.info(f"Details written to database")
-
-            results[f'{file.filename}'] = { 'data' :
-                                        {
-                                            'numbers' : extracted_numbers,
-                                            'text' : text
-                                        }}
-
-
-        except Exception as e:
-            logger.error(f"Error processing file: {e}")
-
-            results[f'{file.filename}'] = { 'data' :
-                                        {
-                                            'error' : str(e)
-                                        }}
+        results[f'{file.filename}'] = {'data' : {'numbers' : extracted_numbers,
+                                                    'text' : text},
+                                        'error' : None}
 
     return results
-
+    #! Need to define schema between frontend and backend, need to decorate this
+    #! For internal communication between services, (data, error) is okay
+    #! Need to plan out for frontend
