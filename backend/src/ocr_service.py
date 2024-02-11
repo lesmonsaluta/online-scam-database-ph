@@ -3,7 +3,6 @@ import pytesseract
 import cv2
 import numpy as np
 import logging
-import asyncio
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -36,13 +35,13 @@ def process_image(image_file):
         text_lines = text.replace('\n', ' ')
 
         # Log the success and the number of extracted items
-        if extracted_numbers and    text_lines:
+        if extracted_numbers and text_lines:
             logging.info(f"OCR processing successful. Extracted {len(extracted_numbers)} items.")
             return extracted_numbers, text_lines
         else:
             raise ValueError("No text detected")
 
     except Exception as e:
-        # Log any exceptions that occur during processing
-        logging.error(f"Error during OCR processing: {e}")
+        # # Log any exceptions that occur during processing
+        # logging.error(f"Error during OCR processing: {e}")
         raise
