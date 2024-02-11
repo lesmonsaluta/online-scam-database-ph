@@ -1,0 +1,4 @@
+2024-02-11 06:04:22,964 - INFO - Received Screenshot 2024-02-01 at 12.04.27 AM.png for OCR processing
+2024-02-11 06:04:23,170 - INFO - Number and text extracted
+2024-02-11 06:04:23,213 - ERROR - Error processing file: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855) already exists.
