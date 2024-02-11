@@ -64,3 +64,132 @@ DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae95
 2024-02-11 08:34:32,955 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
 2024-02-11 08:34:32,959 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
 DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 12:54:55,973 - INFO - Received Screenshot 2024-01-30 at 10.03.46 PM.png for OCR processing
+2024-02-11 12:54:56,294 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 12:54:56,362 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 12:54:56,362 - INFO - Received test_image.png for OCR processing
+2024-02-11 12:54:56,670 - INFO - Number and text extracted for test_image.png
+2024-02-11 12:54:56,675 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 12:54:56,675 - INFO - Received Screenshot 2024-01-30 at 9.30.16 PM.png for OCR processing
+2024-02-11 12:54:56,992 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 12:54:56,996 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:03:08,847 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:03:09,097 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:03:09,151 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:03:09,152 - INFO - Processing test_image.png
+2024-02-11 13:03:09,479 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:03:09,484 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:03:09,484 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:03:09,798 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:03:09,800 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:04:07,514 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:04:07,781 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:04:07,834 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:04:07,835 - INFO - Processing test_image.png
+2024-02-11 13:04:08,174 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:04:08,178 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:04:08,178 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:04:08,494 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:04:08,497 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:07:51,351 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:07:51,635 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:07:51,693 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:07:51,693 - INFO - Processing test_image.png
+2024-02-11 13:07:52,013 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:07:52,018 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:07:52,018 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:07:52,317 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:07:52,319 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:10:52,323 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:10:52,674 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:10:52,718 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:10:52,719 - INFO - Processing test_image.png
+2024-02-11 13:10:53,035 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:10:53,038 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:10:53,038 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:10:53,320 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:10:53,323 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:12:07,500 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:12:07,809 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:12:07,867 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:12:07,868 - INFO - Processing test_image.png
+2024-02-11 13:12:08,164 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:12:08,167 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:12:08,167 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:12:08,446 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:12:08,449 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:20:32,555 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:20:32,849 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:20:32,896 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:20:32,898 - INFO - Processing test_image.png
+2024-02-11 13:20:33,193 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:20:33,196 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:20:33,196 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:20:33,489 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:20:33,492 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:38:49,527 - INFO - Received payload
+2024-02-11 13:38:49,529 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:38:49,818 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:38:49,860 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:38:49,861 - INFO - Processing test_image.png
+2024-02-11 13:38:50,159 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:38:50,162 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:38:50,162 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:38:50,438 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:38:50,442 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:38:50,442 - INFO - Finished processing payload
+2024-02-11 13:43:17,367 - INFO - PRINTING DATA [<text_messages: 1>, <text_messages: 6>, <text_messages: 10>, <text_messages: 12>, <text_messages: 13>]
+2024-02-11 13:47:11,596 - INFO - Received payload
+2024-02-11 13:47:11,597 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:47:11,894 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:47:11,954 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:47:11,955 - INFO - Processing test_image.png
+2024-02-11 13:47:12,280 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:47:12,284 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:47:12,284 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:47:12,583 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:47:12,586 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:47:12,587 - INFO - Finished processing payload
+2024-02-11 13:47:15,890 - INFO - PRINTING DATA [{'sim_number': "['+639815883033']", 'detected_text': '+639815883033 This is a test messagd '}, {'sim_number': "['+639815883033']", 'detected_text': '+639815883033\nThis is a test messagd\n'}, {'sim_number': "['+639815883033']", 'detected_text': "To: +63 981 588 3033\n\nText Message\n\nToday 3:24PM\nToday's Payday Blast on GoJackpot, Jan 30 & 31! New players\ngrab 777p & 177p bonus + 155% Extra Deposit Bonus. Play &\nWin millions Prizes at GoJackpot2.tv\n"}, {'sim_number': "['+639649510804']", 'detected_text': 'To: +63 964 9510804\nText Message\nYesterday 9:11AM\nRegister and receive a reward upto 1777 PHP. Claim here:\nphlink.eu/7XYzj\n'}, {'sim_number': "['+639815460010']", 'detected_text': 'To: +63 981 546 0010\nText Message\nFriday 3:20AM\nGet Today Now, 25th PayDay Blast Free 6,888p Bonus on\nGoJackpot! Be Ready Too for Friday Bonus 6,888p on\nTomorrow! New Player, Free 777p + 177p at GoJackpot2 tv\n'}]
+2024-02-11 13:52:40,931 - INFO - Successfully extracted for home page
+2024-02-11 13:52:48,913 - INFO - Received payload
+2024-02-11 13:52:48,914 - INFO - Processing Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:52:49,288 - INFO - Number and text extracted for Screenshot 2024-01-30 at 10.03.46 PM.png
+2024-02-11 13:52:49,304 - ERROR - Error for Screenshot 2024-01-30 at 10.03.46 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(b0f2fad056143c045e9e31168deea43131b88f162dc27343a889c7f7c3967b44) already exists.
+2024-02-11 13:52:49,305 - INFO - Processing test_image.png
+2024-02-11 13:52:49,655 - INFO - Number and text extracted for test_image.png
+2024-02-11 13:52:49,659 - ERROR - Error for test_image.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(e782cbd11ac1f562ee66cc79eb0c727a462f54af874c95b171ae9599a007c2d4) already exists.
+2024-02-11 13:52:49,659 - INFO - Processing Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:52:49,936 - INFO - Number and text extracted for Screenshot 2024-01-30 at 9.30.16 PM.png
+2024-02-11 13:52:49,939 - ERROR - Error for Screenshot 2024-01-30 at 9.30.16 PM.png: Integrity constraint violation: duplicate key value violates unique constraint "text_messages_blob_hash_key"
+DETAIL:  Key (blob_hash)=(932060886b360e5e72314a7f537a39aa4fe3478d7abe1712a333c97c790cf1ef) already exists.
+2024-02-11 13:52:49,940 - INFO - Finished processing payload

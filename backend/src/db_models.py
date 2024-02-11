@@ -1,5 +1,3 @@
-import hashlib  # Import the hashlib library for hashing
-
 from tortoise import fields, models
 
 class text_messages(models.Model):

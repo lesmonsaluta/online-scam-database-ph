@@ -6,6 +6,8 @@ from src.db_service import init_query, write_to_db
 
 from src.logger_setup import logger_service
 
+from src.schemas import InternalErrorResponseSchema, ResponseDataSchema, ImageUploadResponseSchema, ExternalResponseSchema
+
 import asyncio
 
 """
@@ -15,32 +17,41 @@ Uses src/logger_setup/logger_service to instantiate a logger
 app = create_app()
 logger = logger_service.logger_init()
 
-# # Define an endpoint to execute a custom SQL query
-# @app.get("/home-query/")
-# async def home_query():
-#     data, error = init_query(50)
+# Endpoint triggered upon home screen launch, for scrolling design
+@app.get("/home-query/", response_model=ExternalResponseSchema)
+async def home_query():
+    data, error = await init_query(50)
     
-#     if error:
+    if error:
+        logger.error(f"Failed to extract data for home page: {error}")
+        response_object = ExternalResponseSchema(results=None,
+                                                 error=error,
+                                                 success=False)
         
-#     return
-#! Need to define schema between frontend and backend, need to decorate this
-#! For internal communication between services, (data, error) is okay
-#! Need to plan out for frontend
+        return response_object
+    else:
+        logger.info("Successfully extracted for home page")
+        response_object = ExternalResponseSchema(results=data,
+                                                 error=None,
+                                                 success=True)
+        
+        return response_object
+
 
 # Endpoint triggered upon image uploads
-@app.post("/upload-images/")
+@app.post("/upload-images/", response_model=ExternalResponseSchema)
 async def create_upload_file(files: list[UploadFile] = File(...)):
+    logger.info("Received payload")
     results = {}
     
     for file in files:
-        logger.info(f"Received {file.filename} for OCR processing")
+        logger.info(f"Processing {file.filename}")
         
         # OCR Extraction, BIN extraction, hashing of BIN for entry unique id
         (extracted_numbers, text, bin_contents, hex_digest), file_error = await asyncio.to_thread(process_image, file)
         if file_error:
-            logger.error(f"{file_error} for {file.filename}")
-            results[f'{file.filename}'] = {'data' : None,
-                                           'error' : file_error}
+            logger.error(f"Error for {file.filename}: {file_error}")
+            results[file.filename] = ImageUploadResponseSchema(data=None, error=file_error, success=False)
             continue
         logger.info(f"Number and text extracted for {file.filename}")
 
@@ -48,16 +59,22 @@ async def create_upload_file(files: list[UploadFile] = File(...)):
         db_error = await write_to_db(extracted_numbers, text, bin_contents, hex_digest)
         if db_error:
             logger.error(f"Error for {file.filename}: {db_error}")
-            results[f'{file.filename}'] = {'data' : None,
-                                           'error' : str(db_error)}
+            results[file.filename] = ImageUploadResponseSchema(data=None, error=str(db_error), success=False)
             continue
+        logger.info(f"Written onto DB for {file.filename}")
+
+        # No errors encountered, add to response dict
+        results[file.filename] = ImageUploadResponseSchema(
+            data=ResponseDataSchema(
+                numbers=extracted_numbers, 
+                text=text
+                ), 
+            error=None, 
+            success=True)
+        
+    response_object = {'results': results,
+                       'error': None,
+                       'success': True}
     
-
-        results[f'{file.filename}'] = {'data' : {'numbers' : extracted_numbers,
-                                                    'text' : text},
-                                        'error' : None}
-
-    return results
-    #! Need to define schema between frontend and backend, need to decorate this
-    #! For internal communication between services, (data, error) is okay
-    #! Need to plan out for frontend
+    logger.info("Finished processing payload")
+    return response_object

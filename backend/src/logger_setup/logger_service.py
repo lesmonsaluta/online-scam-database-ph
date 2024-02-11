@@ -2,10 +2,8 @@ import logging
 import logging.config
 import logging.handlers
 import pathlib
-import timeit
 import json
 from io import StringIO
-from datetime import datetime
 
 class StringIOHandler(logging.StreamHandler):
     def __init__(self, stream=None):
