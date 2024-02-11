@@ -1,5 +1,7 @@
 from src.db_models import text_messages
-from tortoise.exceptions import DoesNotExist
+from tortoise.exceptions import DoesNotExist, IntegrityError, OperationalError
+from asyncpg.exceptions import DataError, UniqueViolationError
+
 
 async def init_query(top: int):
     try:
@@ -22,6 +24,19 @@ async def init_query(top: int):
 
 async def write_to_db(extracted_numbers, text, bin_contents, hex_digest):
     try:
-        await text_messages.create(sim_number=extracted_numbers, detected_text=text, image_file=bin_contents, blob_hash=hex_digest)
+        await text_messages.create(
+            sim_number=extracted_numbers, 
+            detected_text=text, 
+            image_file=bin_contents, 
+            blob_hash=hex_digest
+        )
+
+    except IntegrityError as e:
+        return f"Integrity constraint violation: {e}"
+
+    except DataError:
+        return "Data does not fit schema"
+    except OperationalError:
+        return "Database operation failed"
     except Exception as e:
-        return str(e)
+        return e

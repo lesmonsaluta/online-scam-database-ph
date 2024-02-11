@@ -35,7 +35,7 @@ async def create_upload_file(files: list[UploadFile] = File(...)):
     for file in files:
         logger.info(f"Received {file.filename} for OCR processing")
         
-        # Process the image
+        # OCR Extraction, BIN extraction, hashing of BIN for entry unique id
         (extracted_numbers, text, bin_contents, hex_digest), file_error = await asyncio.to_thread(process_image, file)
         if file_error:
             logger.error(f"{file_error} for {file.filename}")
@@ -44,7 +44,7 @@ async def create_upload_file(files: list[UploadFile] = File(...)):
             continue
         logger.info(f"Number and text extracted for {file.filename}")
 
-        # Write to DB Service
+        # write to POSTGRES DB
         db_error = await write_to_db(extracted_numbers, text, bin_contents, hex_digest)
         if db_error:
             logger.error(f"Error for {file.filename}: {db_error}")
