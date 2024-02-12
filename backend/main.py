@@ -78,3 +78,9 @@ async def create_upload_file(files: list[UploadFile] = File(...)):
     
     logger.info("Finished processing payload")
     return response_object
+
+## API
+
+## MODEL
+
+## COOKIES AND SESSION ID
